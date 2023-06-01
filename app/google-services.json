@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "668638571928",
+    "project_id": "rumahku-387909",
+    "storage_bucket": "rumahku-387909.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:668638571928:android:5999ec5a4b168cd9cc8fed",
+        "android_client_info": {
+          "package_name": "com.example.rumahku"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "668638571928-ranbd73cgjkshh18t3a8en49d6j0qa0s.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.rumahku",
+            "certificate_hash": "baa40bbeca90cb2f41f356df7e5e67654ea10e4f"
+          }
+        },
+        {
+          "client_id": "668638571928-nenelmdkm90upp2mh0bdn34fl9qplhcg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyArjO3MLYcNBh3gLX4xOZxwwrnlWEuQ1hc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "668638571928-53q3ruop5j2ircbbabss7k1fa2o9m15e.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

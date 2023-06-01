@@ -1,17 +1,47 @@
 package com.example.rumahku
 
-import androidx.appcompat.app.AppCompatActivity
+import android.content.Intent
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
-import androidx.navigation.findNavController
 import com.example.rumahku.databinding.ActivityMainBinding
+import com.firebase.ui.auth.AuthUI
+import com.firebase.ui.auth.FirebaseAuthUIActivityResultContract
+import com.firebase.ui.auth.data.model.FirebaseAuthUIAuthenticationResult
+import com.google.firebase.auth.FirebaseAuth
 
 class MainActivity : AppCompatActivity() {
+    val signInLauncher = registerForActivityResult(
+        FirebaseAuthUIActivityResultContract(),
+    ) { res ->
+        this.onSignInResult(res)
+    }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        //setContentView(R.layout.activity_main)
-        val binding = DataBindingUtil.setContentView<ActivityMainBinding>(this,
-        R.layout.activity_main)
-        val navController = this.findNavController(R.id.myNavHostFragment)
+        val binding = DataBindingUtil.setContentView<ActivityMainBinding>(this, R.layout.activity_main)
+        binding.btnLogin.setOnClickListener { view ->
+            createSignInIntent()
+        }
+    }
+    private fun createSignInIntent(){
+        val providers = arrayListOf(
+            AuthUI.IdpConfig.GoogleBuilder().build()
+        )
+
+        val signInIntent = AuthUI.getInstance().createSignInIntentBuilder()
+            .setAvailableProviders(providers).build()
+        signInLauncher.launch(signInIntent)
+    }
+    private fun onSignInResult(result: FirebaseAuthUIAuthenticationResult){
+        //val response = result.idpResponse
+        if (result.resultCode == RESULT_OK){
+            val user = FirebaseAuth.getInstance().currentUser
+            val i = Intent(this, InsideActivity::class.java)
+            i.putExtra("user", user)
+            startActivity(i)
+            finish()
+        } else{
+
+        }
     }
 }

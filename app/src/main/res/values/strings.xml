@@ -1,5 +1,4 @@
 <resources>
     <string name="app_name">RumahKu</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="web_client">668638571928-53q3ruop5j2ircbbabss7k1fa2o9m15e.apps.googleusercontent.com</string>
 </resources>
