@@ -8,6 +8,26 @@
     <fragment
         android:id="@+id/mainFragment"
         android:name="com.example.rumahku.MainFragment"
-        android:label="fragment_main"
-        tools:layout="@layout/fragment_main" />
+        android:label="Daftar Rumah"
+        tools:layout="@layout/fragment_main" >
+        <action
+            android:id="@+id/action_mainFragment_to_rumahFragment"
+            app:destination="@id/rumahFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/rumahFragment"
+        android:name="com.example.rumahku.RumahFragment"
+        android:label="Detail Rumah" >
+        <argument
+            android:name="rumahKey"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/rumahKuFragment"
+        android:name="com.example.rumahku.RumahKuFragment"
+        android:label="@string/app_name" />
+    <fragment
+        android:id="@+id/tambahRumahFragment"
+        android:name="com.example.rumahku.TambahRumahFragment"
+        android:label="Tambah Rumah" />
 </navigation>

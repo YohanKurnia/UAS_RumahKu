@@ -35,13 +35,18 @@ class MainActivity : AppCompatActivity() {
     private fun onSignInResult(result: FirebaseAuthUIAuthenticationResult){
         //val response = result.idpResponse
         if (result.resultCode == RESULT_OK){
-            val user = FirebaseAuth.getInstance().currentUser
-            val i = Intent(this, InsideActivity::class.java)
-            i.putExtra("user", user)
-            startActivity(i)
-            finish()
-        } else{
-
+            goInside()
         }
+    }
+    private fun goInside(){
+        val i = Intent(this, InsideActivity::class.java)
+        startActivity(i)
+        finish()
+    }
+
+    override fun onStart() {
+        super.onStart()
+        val user = FirebaseAuth.getInstance().currentUser
+        if (user != null) goInside()
     }
 }
