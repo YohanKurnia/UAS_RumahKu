@@ -6,7 +6,6 @@ import com.google.firebase.database.IgnoreExtraProperties
 data class Rumah(
     var pemilik: String? = "",
     var deskripsi: String? = "",
-    var gambar: String? = "",
     var telepon: String? = "",
     var alamat: String? = ""
 )
