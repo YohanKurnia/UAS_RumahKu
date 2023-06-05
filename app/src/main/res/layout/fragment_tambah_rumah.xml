@@ -2,28 +2,86 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
-
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:context=".TambahRumahFragment">
-
-        <ImageView
-            android:id="@+id/gambarRumah"
+        android:layout_height="match_parent">
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="200dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:layout_height="match_parent"
+            tools:context=".TambahRumahFragment">
 
-        <Button
-            android:id="@+id/btnGambar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="8dp"
-            android:text="Ambil Gambar"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/gambarRumah"/>
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            <ImageView
+                android:id="@+id/gambarRumah"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Button
+                android:id="@+id/btnGambar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:text="Ambil Gambar"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/gambarRumah"/>
+            <EditText
+                android:id="@+id/alamatRumah"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="Alamat Rumah"
+                android:inputType="textMultiLine"
+                android:minHeight="48dp"
+                android:layout_margin="16dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/btnGambar"/>
+            <EditText
+                android:id="@+id/deskripsiRumah"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="Keterangan Tambahan"
+                android:inputType="textMultiLine"
+                android:minHeight="48dp"
+                android:layout_margin="16dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/alamatRumah"/>
+            <EditText
+                android:id="@+id/noTelepon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="Nomor Telepon"
+                android:inputType="phone"
+                android:minHeight="48dp"
+                android:layout_margin="16dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/deskripsiRumah"/>
+
+            <Button
+                android:id="@+id/btnTambah"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:backgroundTint="#8BC34A"
+                android:text="tambah rumah"
+                android:textStyle="bold"
+                app:icon="@android:drawable/ic_input_add"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/noTelepon" />
+
+            <Button
+                android:id="@+id/btnBatal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:backgroundTint="#F44336"
+                android:text="batal"
+                android:textStyle="bold"
+                app:icon="@android:drawable/ic_menu_close_clear_cancel"
+                app:layout_constraintStart_toEndOf="@id/btnTambah"
+                app:layout_constraintTop_toBottomOf="@id/noTelepon" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
 </layout>
