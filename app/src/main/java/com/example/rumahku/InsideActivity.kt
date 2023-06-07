@@ -26,16 +26,25 @@ class InsideActivity : AppCompatActivity() {
         val navController = this.findNavController(R.id.myNavHostFragment)
         NavigationUI.setupActionBarWithNavController(this, navController, drawerLayout)
         NavigationUI.setupWithNavController(binding.navView, navController)
-        binding.keluar.setOnClickListener {_ ->
-            AuthUI.getInstance().signOut(this)
-            val i = Intent(this, MainActivity::class.java)
-            startActivity(i)
-            finish()
+        binding.keluar.setOnClickListener {
+            AuthUI.getInstance().signOut(this).continueWith {
+                goToTitle()
+            }
         }
     }
-
+    private fun goToTitle(){
+        val i = Intent(this, MainActivity::class.java)
+        startActivity(i)
+        finish()
+    }
     override fun onSupportNavigateUp(): Boolean {
         val navController = this.findNavController(R.id.myNavHostFragment)
         return NavigationUI.navigateUp(navController, drawerLayout)
+    }
+
+    override fun onStart() {
+        super.onStart()
+        val user = FirebaseAuth.getInstance().currentUser
+        if (user == null) goToTitle()
     }
 }
