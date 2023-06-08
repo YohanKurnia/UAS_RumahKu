@@ -12,6 +12,8 @@ import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
+import androidx.navigation.findNavController
+import androidx.navigation.fragment.findNavController
 import com.example.rumahku.databinding.FragmentTambahRumahBinding
 import com.google.firebase.auth.FirebaseAuth
 
@@ -23,7 +25,7 @@ class TambahRumahFragment : Fragment() {
     ): View? {
         val binding = DataBindingUtil.inflate<FragmentTambahRumahBinding>(inflater,
         R.layout.fragment_tambah_rumah, container, false)
-        var resultLauncher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()){result ->
+        val resultLauncher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()){result ->
             if (result.resultCode == Activity.RESULT_OK){
                 @Suppress("DEPRECATED")
                 val bitmap: Bitmap? = result.data?.extras?.getParcelable("data")
@@ -46,6 +48,7 @@ class TambahRumahFragment : Fragment() {
                 binding.alamatRumah.text.toString(),
                 binding.deskripsiRumah.text.toString(),
                 binding.noTelepon.text.toString())
+                it.findNavController().navigate(R.id.action_tambahRumahFragment_to_mainFragment)
             } else{
                 Toast.makeText(activity, "Tolong lengkapi semua bagian", Toast.LENGTH_SHORT).show()
             }

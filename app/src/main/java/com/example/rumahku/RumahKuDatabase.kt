@@ -3,7 +3,6 @@ package com.example.rumahku
 import android.graphics.Bitmap
 import android.graphics.drawable.BitmapDrawable
 import android.graphics.drawable.Drawable
-import android.widget.Toast
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
@@ -21,8 +20,8 @@ class RumahKuDatabase {
     }
 
     fun tambahRumah(gambar: Drawable, pemilik: String?, alamat: String, deskripsi: String, telepon: String){
-        val rumah = Rumah(pemilik, deskripsi, telepon, alamat)
         val key = database.child("rumah").push().key
+        val rumah = Rumah(pemilik, deskripsi, telepon, alamat, key)
 
         val bitmap = (gambar as BitmapDrawable).bitmap
         val baos = ByteArrayOutputStream()

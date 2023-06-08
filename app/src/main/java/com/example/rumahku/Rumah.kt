@@ -7,5 +7,6 @@ data class Rumah(
     var pemilik: String? = "",
     var deskripsi: String? = "",
     var telepon: String? = "",
-    var alamat: String? = ""
+    var alamat: String? = "",
+    var key: String? = ""
 )
