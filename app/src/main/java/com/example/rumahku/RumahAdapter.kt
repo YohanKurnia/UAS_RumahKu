@@ -37,7 +37,7 @@ class RumahAdapter(options: FirebaseRecyclerOptions<Rumah>) : FirebaseRecyclerAd
         holder.card.setOnClickListener {
             val navController = it.findNavController()
             val bundle = Bundle()
-            bundle.putString("key", model.key)
+            bundle.putString("rumahKey", model.key)
             navController.navigate(R.id.action_mainFragment_to_rumahFragment, bundle)
         }
     }
