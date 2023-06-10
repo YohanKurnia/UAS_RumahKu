@@ -21,8 +21,7 @@ class TambahRumahFragment : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
+        savedInstanceState: Bundle?): View? {
         val binding = DataBindingUtil.inflate<FragmentTambahRumahBinding>(inflater,
         R.layout.fragment_tambah_rumah, container, false)
         val resultLauncher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()){result ->
@@ -47,7 +46,7 @@ class TambahRumahFragment : Fragment() {
                 FirebaseAuth.getInstance().currentUser?.uid,
                 binding.alamatRumah.text.toString(),
                 binding.deskripsiRumah.text.toString(),
-                binding.noTelepon.text.toString())
+                binding.noTelepon.text.toString(), null)
                 it.findNavController().navigate(R.id.action_tambahRumahFragment_to_mainFragment)
             } else{
                 Toast.makeText(activity, "Tolong lengkapi semua bagian", Toast.LENGTH_SHORT).show()

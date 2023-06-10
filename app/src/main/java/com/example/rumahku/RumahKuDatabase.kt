@@ -13,21 +13,26 @@ import java.io.ByteArrayOutputStream
 class RumahKuDatabase {
     private lateinit var database: DatabaseReference
     private lateinit var storage: StorageReference
-
     fun initDB(){
         database = Firebase.database.reference
         storage = Firebase.storage.reference
     }
 
-    fun tambahRumah(gambar: Drawable, pemilik: String?, alamat: String, deskripsi: String, telepon: String){
-        val key = database.child("rumah").push().key
+    fun tambahRumah(gambar: Drawable?, pemilik: String?, alamat: String
+                    , deskripsi: String, telepon: String, tipe: String?){
+        var key: String?
+        if (tipe == null) key = database.child("rumah").push().key
+        else key = tipe
+
         val rumah = Rumah(pemilik, deskripsi, telepon, alamat, key)
 
-        val bitmap = (gambar as BitmapDrawable).bitmap
-        val baos = ByteArrayOutputStream()
-        bitmap.compress(Bitmap.CompressFormat.JPEG, 100, baos)
-        val data = baos.toByteArray()
-        storage.child("gambarRumah").child("$key.jpg").putBytes(data)
+        if (gambar != null){
+            val bitmap = (gambar as BitmapDrawable).bitmap
+            val baos = ByteArrayOutputStream()
+            bitmap.compress(Bitmap.CompressFormat.JPEG, 100, baos)
+            val data = baos.toByteArray()
+            storage.child("gambarRumah").child("$key.jpg").putBytes(data)
+        }
 
         database.child("rumah").child(key!!).setValue(rumah)
     }

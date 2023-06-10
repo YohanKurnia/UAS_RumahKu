@@ -1,34 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools">
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            tools:context=".TambahRumahFragment">
-
+            tools:context=".EditRumahFragment">
             <ImageView
-                android:id="@+id/gambarRumah"
+                android:id="@+id/gambarRumahEdit"
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
-
-            <Button
-                android:id="@+id/btnGambar"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="16dp"
-                android:text="Ambil Gambar"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/gambarRumah"/>
             <EditText
-                android:id="@+id/alamatRumah"
+                android:id="@+id/alamatRumahEdit"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:hint="Alamat Rumah"
@@ -36,9 +25,9 @@
                 android:minHeight="48dp"
                 android:layout_margin="16dp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/btnGambar"/>
+                app:layout_constraintTop_toBottomOf="@id/gambarRumahEdit"/>
             <EditText
-                android:id="@+id/deskripsiRumah"
+                android:id="@+id/deskripsiRumahEdit"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:hint="Keterangan Tambahan"
@@ -46,9 +35,9 @@
                 android:minHeight="48dp"
                 android:layout_margin="16dp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/alamatRumah"/>
+                app:layout_constraintTop_toBottomOf="@id/alamatRumahEdit"/>
             <EditText
-                android:id="@+id/noTelepon"
+                android:id="@+id/noTeleponEdit"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:hint="Nomor Telepon"
@@ -56,20 +45,19 @@
                 android:minHeight="48dp"
                 android:layout_margin="16dp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/deskripsiRumah"/>
+                app:layout_constraintTop_toBottomOf="@id/deskripsiRumahEdit"/>
 
             <Button
-                android:id="@+id/btnTambah"
+                android:id="@+id/btnEdit"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="16dp"
                 android:backgroundTint="#8BC34A"
-                android:text="tambah rumah"
+                android:text="ubah rumah"
                 android:textStyle="bold"
-                app:icon="@android:drawable/ic_input_add"
+                app:icon="@android:drawable/ic_menu_edit"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/noTelepon" />
-
+                app:layout_constraintTop_toBottomOf="@id/noTeleponEdit" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
 </layout>
