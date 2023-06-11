@@ -1,4 +1,4 @@
-package com.example.rumahku
+package id.ac.umn.rumahku
 
 import android.content.Intent
 import android.net.Uri
@@ -9,13 +9,12 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import com.bumptech.glide.Glide
-import com.bumptech.glide.signature.ObjectKey
-import com.example.rumahku.databinding.FragmentRumahBinding
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
 import com.google.firebase.storage.StorageReference
 import com.google.firebase.storage.ktx.storage
+import id.ac.umn.rumahku.databinding.FragmentRumahBinding
 
 class RumahFragment : Fragment() {
     private lateinit var storage: StorageReference
@@ -24,7 +23,7 @@ class RumahFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?): View? {
         val binding = DataBindingUtil.inflate<FragmentRumahBinding>(inflater,
-        R.layout.fragment_rumah, container, false)
+            R.layout.fragment_rumah, container, false)
 
         val key = arguments?.getString("rumahKey")
         storage = Firebase.storage.reference.child("gambarRumah").child("$key.jpg")

@@ -1,14 +1,14 @@
-package com.example.rumahku
+package id.ac.umn.rumahku
 
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
-import com.example.rumahku.databinding.ActivityMainBinding
 import com.firebase.ui.auth.AuthUI
 import com.firebase.ui.auth.FirebaseAuthUIActivityResultContract
 import com.firebase.ui.auth.data.model.FirebaseAuthUIAuthenticationResult
 import com.google.firebase.auth.FirebaseAuth
+import id.ac.umn.rumahku.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
     val signInLauncher = registerForActivityResult(
@@ -18,7 +18,9 @@ class MainActivity : AppCompatActivity() {
     }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        val binding = DataBindingUtil.setContentView<ActivityMainBinding>(this, R.layout.activity_main)
+        val binding = DataBindingUtil.setContentView<ActivityMainBinding>(this,
+            R.layout.activity_main
+        )
         binding.btnLogin.setOnClickListener { view ->
             createSignInIntent()
         }

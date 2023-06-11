@@ -1,4 +1,4 @@
-package com.example.rumahku
+package id.ac.umn.rumahku
 
 import android.graphics.Bitmap
 import android.graphics.drawable.BitmapDrawable

@@ -15,12 +15,12 @@
         tools:targetApi="31">
         <activity
             android:screenOrientation="portrait"
-            android:name=".InsideActivity"
+            android:name="id.ac.umn.rumahku.InsideActivity"
             android:exported="false"
             android:configChanges="orientation|screenLayout|screenSize"/>
         <activity
             android:screenOrientation="portrait"
-            android:name=".MainActivity"
+            android:name="id.ac.umn.rumahku.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

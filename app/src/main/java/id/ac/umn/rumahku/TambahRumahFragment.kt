@@ -1,4 +1,4 @@
-package com.example.rumahku
+package id.ac.umn.rumahku
 
 import android.app.Activity
 import android.content.Intent
@@ -13,9 +13,8 @@ import androidx.activity.result.contract.ActivityResultContracts
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
-import androidx.navigation.fragment.findNavController
-import com.example.rumahku.databinding.FragmentTambahRumahBinding
 import com.google.firebase.auth.FirebaseAuth
+import id.ac.umn.rumahku.databinding.FragmentTambahRumahBinding
 
 class TambahRumahFragment : Fragment() {
 
@@ -23,7 +22,7 @@ class TambahRumahFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?): View? {
         val binding = DataBindingUtil.inflate<FragmentTambahRumahBinding>(inflater,
-        R.layout.fragment_tambah_rumah, container, false)
+            R.layout.fragment_tambah_rumah, container, false)
         val resultLauncher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()){result ->
             if (result.resultCode == Activity.RESULT_OK){
                 @Suppress("DEPRECATED")

@@ -8,17 +8,17 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:668638571928:android:5999ec5a4b168cd9cc8fed",
+        "mobilesdk_app_id": "1:668638571928:android:e06fc56833f67112cc8fed",
         "android_client_info": {
-          "package_name": "com.example.rumahku"
+          "package_name": "id.ac.umn.rumahku"
         }
       },
       "oauth_client": [
         {
-          "client_id": "668638571928-ranbd73cgjkshh18t3a8en49d6j0qa0s.apps.googleusercontent.com",
+          "client_id": "668638571928-jcr31glogl2d6kdroo2actvh27ukrusa.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.example.rumahku",
+            "package_name": "id.ac.umn.rumahku",
             "certificate_hash": "baa40bbeca90cb2f41f356df7e5e67654ea10e4f"
           }
         },

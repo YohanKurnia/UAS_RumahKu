@@ -8,7 +8,7 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            tools:context=".EditRumahFragment">
+            tools:context="id.ac.umn.rumahku.EditRumahFragment">
             <ImageView
                 android:id="@+id/gambarRumahEdit"
                 android:layout_width="match_parent"

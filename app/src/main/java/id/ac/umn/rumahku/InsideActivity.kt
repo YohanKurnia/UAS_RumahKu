@@ -1,19 +1,15 @@
-package com.example.rumahku
+package id.ac.umn.rumahku
 
 import android.content.Intent
 import android.os.Bundle
-import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.GravityCompat
 import androidx.databinding.DataBindingUtil
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.navigation.findNavController
 import androidx.navigation.ui.NavigationUI
-import com.example.rumahku.databinding.ActivityInsideBinding
 import com.firebase.ui.auth.AuthUI
-import com.google.android.material.navigation.NavigationView
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.FirebaseUser
+import id.ac.umn.rumahku.databinding.ActivityInsideBinding
 
 class InsideActivity : AppCompatActivity() {
     private lateinit var drawerLayout: DrawerLayout

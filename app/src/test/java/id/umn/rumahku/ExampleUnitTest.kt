@@ -1,4 +1,4 @@
-package com.example.rumahku
+package id.umn.rumahku
 
 import org.junit.Test
 

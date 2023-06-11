@@ -1,4 +1,4 @@
-package com.example.rumahku
+package id.ac.umn.rumahku
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -7,28 +7,28 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.rumahku.databinding.FragmentMainBinding
 import com.firebase.ui.database.FirebaseRecyclerOptions
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
-import com.google.firebase.ktx.Firebase
+import id.ac.umn.rumahku.databinding.FragmentRumahKuBinding
 
-class MainFragment : Fragment() {
+class RumahKuFragment : Fragment() {
     lateinit var database: DatabaseReference
-    lateinit var adapter: RumahAdapter
-
+    lateinit var adapter: RumahKuAdapter
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?): View? {
-        val binding = DataBindingUtil.inflate<FragmentMainBinding>(inflater,
-        R.layout.fragment_main, container, false)
+        val binding = DataBindingUtil.inflate<FragmentRumahKuBinding>(inflater,
+            R.layout.fragment_rumah_ku, container, false)
 
         database = FirebaseDatabase.getInstance().reference.child("rumah")
-        binding.recycle.layoutManager = LinearLayoutManager(context)
+        binding.recycleKu.layoutManager = LinearLayoutManager(context)
         val option = FirebaseRecyclerOptions.Builder<Rumah>()
-            .setQuery(database, Rumah::class.java).build()
-        adapter = RumahAdapter(option)
-        binding.recycle.adapter = adapter
+            .setQuery(database.orderByChild("pemilik").equalTo(FirebaseAuth.getInstance().currentUser?.uid)
+                , Rumah::class.java).build()
+        adapter = RumahKuAdapter(option)
+        binding.recycleKu.adapter = adapter
 
         return binding.root
     }
