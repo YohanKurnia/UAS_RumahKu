@@ -15,6 +15,22 @@
       },
       "oauth_client": [
         {
+          "client_id": "668638571928-3jkpp3skobt4qhdct1mgvd5aqufp987l.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "id.ac.umn.rumahku",
+            "certificate_hash": "16bcda6c5355f40db349cd81dbcdf739893fd81d"
+          }
+        },
+        {
+          "client_id": "668638571928-6ed0p253qd300qva0pucaba3cac9ifkt.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "id.ac.umn.rumahku",
+            "certificate_hash": "b3ff16b98db62dac0808f82965905cf117aa8caa"
+          }
+        },
+        {
           "client_id": "668638571928-jcr31glogl2d6kdroo2actvh27ukrusa.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
